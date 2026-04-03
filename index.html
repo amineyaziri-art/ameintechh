@@ -3,54 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech & AI Morocco</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>AmineTech | PC & AI Morocco</title>
     <style>
-        :root { --primary: #00d2ff; --accent: #9d50bb; --bg: #0f172a; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: white; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { max-width: 600px; width: 90%; background: #1e293b; padding: 30px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); text-align: center; }
-        h1 { background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; margin-bottom: 10px; }
-        .darija { color: #f9d423; font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 25px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left; }
-        .card { background: #334155; padding: 15px; border-radius: 12px; font-size: 0.9rem; }
-        .card h3 { margin-top: 0; color: var(--primary); font-size: 1rem; }
-        .btn-wa { background: #25D366; color: white; padding: 16px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 30px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: 0.3s; }
-        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
-        .footer { margin-top: 25px; font-size: 0.8rem; color: #94a3b8; }
+        body { font-family: 'Segoe UI', sans-serif; background: #050505; color: white; margin: 0; text-align: center; }
+        .hero { padding: 80px 20px; background: radial-gradient(circle at center, #1e293b 0%, #050505 100%); min-height: 100vh; }
+        h1 { font-size: 3.5rem; background: linear-gradient(90deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 10px 0; font-weight: 800; }
+        .darija { color: #ffd700; font-size: 1.4rem; margin-bottom: 30px; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: auto; }
+        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid #333; padding: 30px; border-radius: 20px; backdrop-filter: blur(10px); transition: 0.3s; text-align: left; }
+        .card:hover { border-color: #00f2fe; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2); }
+        h3 { color: #00f2fe; margin-top: 0; font-size: 1.5rem; }
+        .btn-wa { background: #25D366; color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 50px; font-size: 1.2rem; transition: 0.3s; }
+        .btn-wa:hover { transform: scale(1.05); box-shadow: 0 0 20px #25D366; }
+        .badge { background: #4facfe; color: black; padding: 6px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Tech & AI Builder</h1>
-        <span class="darija">Montage PC, Config Pro, w kolchi 3la AI 🚀</span>
-
+    <section class="hero">
+        <span class="badge">Advanced Tech & AI Specialist</span>
+        <h1>AmineTech</h1>
+        <p class="darija">Montage PC Pro & Khidmat AI f l-meghrib 🇲🇦</p>
+        
         <div class="grid">
             <div class="card">
-                <h3>🖥️ Custom PC</h3>
-                <p>N-monti lik PC nadi 3la 7sab budget dyalk. Gaming awla Work.</p>
+                <h3>🖥️ PC Building</h3>
+                <p>N-monti lik PC nadi 3la 7sab budget dyalk. Gaming, Streaming awla Workstation.</p>
             </div>
             <div class="card">
-                <h3>🤖 Intelligence Artificielle</h3>
-                <p>T3lem kifach tkhdem b AI (ChatGPT, Midjourney) bach rbe7 l-weqt.</p>
+                <h3>🤖 AI Solutions</h3>
+                <p>Khidmat l-Intelligence Artificielle. Optimization l-khidma dyalk b les outils AI.</p>
             </div>
             <div class="card">
-                <h3>🛠️ Repair & Dev</h3>
-                <p>Maintenance PC w instalation de logiciels spécialisés.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Optimization</h3>
-                <p>Boost FPS f les jeux w n-nqi lik Windows dyalk.</p>
+                <h3>🔧 Tech Support</h3>
+                <p>Réparation, nettoyage, w boost FPS. Khali l-machine dyalk t-tayer!</p>
             </div>
         </div>
 
         <!-- REMPLACE LE NUMERO ICI PAR LE TIEN -->
-        <a href="https://wa.me/212600000000" class="btn-wa">Sifet liya f WhatsApp</a>
-
-        <div class="footer">
-            © 2024 • Made by a Moroccan Kid Entrepreneur
-        </div>
-    </div>
+        <a href="https://wa.me/212600000000" class="btn-wa">Contact me on WhatsApp</a>
+        
+        <p style="margin-top: 40px; color: #666; font-size: 0.8rem;">© 2025 AmineTech Morocco</p>
+    </section>
 
 </body>
 </html>
