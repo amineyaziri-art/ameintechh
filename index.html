@@ -3,66 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmineTech | Custom PC Sourcing & AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <title>AmineTech | Premium PC Sourcing & AI Deployment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00f2fe; --bg: #010206; --card: rgba(255, 255, 255, 0.03); }
-        * { box-sizing: border-box; transition: 0.3s ease; }
-        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: white; margin: 0; text-align: center; }
-        
-        .hero { padding: 100px 20px; background: radial-gradient(circle at top, #111827 0%, var(--bg) 70%); }
-        h1 { font-size: clamp(2.5rem, 10vw, 5rem); font-weight: 900; margin: 0; line-height: 0.9; }
-        .accent { color: var(--primary); }
-        
-        .service-box { 
-            max-width: 900px; margin: -50px auto 50px; background: var(--card); 
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 40px; 
-            padding: 40px; backdrop-filter: blur(20px);
-        }
-        
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-        .step-card { background: rgba(0,0,0,0.3); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: left; }
-        .step-num { color: var(--primary); font-weight: 900; font-size: 1.5rem; margin-bottom: 10px; display: block; }
-        
-        .btn-wa { 
-            background: var(--primary); color: #000; padding: 20px 50px; 
-            text-decoration: none; border-radius: 100px; font-weight: 900; 
-            display: inline-block; margin-top: 40px; font-size: 1.1rem;
-        }
-        .btn-wa:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 242, 254, 0.4); }
+        :root { --primary: #00f2fe; --accent: #ffd700; --bg: #02040a; --glass: rgba(255, 255, 255, 0.03); }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: white; margin: 0; line-height: 1.6; }
+
+        /* Animation Classes */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Navigation */
+        nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(2,4,10,0.8); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-weight: 900; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
+        .nav-links a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero { padding: 120px 20px; text-align: center; background: radial-gradient(circle at center, #112240 0%, var(--bg) 80%); }
+        h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); font-weight: 900; line-height: 0.85; margin: 0; text-transform: uppercase; }
+        .gradient-text { background: linear-gradient(90deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Trusted Brands Scroller */
+        .brands { padding: 40px 0; background: rgba(255,255,255,0.02); overflow: hidden; white-space: nowrap; border-top: 1px solid #111; border-bottom: 1px solid #111; }
+        .brand-track { display: inline-block; animation: scroll 20s linear infinite; }
+        .brand-track span { margin: 0 40px; color: #444; font-weight: 900; font-size: 1.2rem; letter-spacing: 2px; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* Detailed Services */
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 900; }
+        .section-title p { color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 5% 100px; max-width: 1300px; margin: auto; }
+        .service-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; position: relative; overflow: hidden; }
+        .service-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .service-card ul { padding: 0; list-style: none; color: #94a3b8; }
+        .service-card li { margin-bottom: 10px; font-size: 0.95rem; }
+        .service-card li::before { content: "→"; color: var(--primary); margin-right: 10px; font-weight: 900; }
+
+        /* FAQ Section (The "Darija" Trust Builder) */
+        .faq { padding: 100px 5%; background: #05070a; }
+        .faq-container { max-width: 800px; margin: auto; text-align: left; }
+        .faq-item { margin-bottom: 30px; border-bottom: 1px solid #111; padding-bottom: 20px; }
+        .faq-item h4 { color: var(--accent); margin-bottom: 10px; }
+        .faq-item p { color: #888; }
+
+        /* CTA */
+        .final-cta { padding: 100px 20px; text-align: center; }
+        .btn-wa { background: var(--primary); color: #000; padding: 22px 60px; text-decoration: none; border-radius: 100px; font-weight: 900; font-size: 1.2rem; display: inline-block; transition: 0.3s; }
+        .btn-wa:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 20px 40px rgba(0,242,254,0.3); }
+
+        footer { padding: 50px; text-align: center; color: #333; font-size: 0.8rem; font-weight: 800; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>YOU DREAM IT.<br><span class="accent">I BUILD IT.</span></h1>
-        <p style="color: #94a3b8; font-size: 1.2rem; margin-top: 20px;">Personalized PC Sourcing & AI Deployment in Morocco.</p>
-    </section>
-
-    <div class="service-box">
-        <h2 style="margin-top: 0;">How AmineTech Works</h2>
-        <div class="steps">
-            <div class="step-card">
-                <span class="step-num">01</span>
-                <h3>Consultation</h3>
-                <p>We talk about your budget and needs (Gaming or AI). <br><b>N-choufou chno khtajiti bedabt.</b></p>
-            </div>
-            <div class="step-card">
-                <span class="step-num">02</span>
-                <h3>Best Price Sourcing</h3>
-                <p>I find the best components at the lowest market prices in Morocco. <br><b>N-jeb lik me7san taman f souq.</b></p>
-            </div>
-            <div class="step-card">
-                <span class="step-num">03</span>
-                <h3>Expert Assembly</h3>
-                <p>I build and optimize your machine for peak performance. <br><b>Montage pro w optimization kamla.</b></p>
-            </div>
+    <nav>
+        <div class="logo">AMINETECH.</div>
+        <div class="nav-links">
+            <a href="#services">SERVICES</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://wa.me/212600000000">CONTACT</a>
         </div>
-        
-        <a href="https://wa.me/212600000000" class="btn-wa">BOOK A CONSULTATION</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="reveal">Next-Gen <br><span class="gradient-text">Hardware</span> Expert.</h1>
+        <p class="reveal" style="color: #64748b; font-size: 1.2rem; max-width: 600px; margin: 30px auto;">
+            I don't just sell PCs. I source, build, and deploy high-performance machines tailored for the future of AI.
+        </p>
+        <a href="#services" class="btn-wa reveal" style="margin-top: 40px; background: white;">Explore Services</a>
+    </header>
+
+    <div class="brands">
+        <div class="brand-track">
+            <span>NVIDIA</span> <span>INTEL</span> <span>AMD</span> <span>MSI</span> <span>ASUS</span> <span>CORSAIR</span> <span>GIGABYTE</span> <span>RAZER</span>
+            <span>NVIDIA</span> <span>INTEL</span> <span>AMD</span> <span>MSI</span> <span>ASUS</span> <span>CORSAIR</span> <span>GIGABYTE</span> <span>RAZER</span>
+        </div>
     </div>
 
-    <footer style="padding: 40px; color: #444;">AMINETECH MOROCCO • 2026</footer>
+    <section id="services" class="reveal" style="padding-top: 100px;">
+        <div class="section-title">
+            <p>Premium Sourcing</p>
+            <h2>My Core Expertise</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🖥️ Gaming Builds</h3>
+                <ul>
+                    <li>1080p, 1440p, or 4K Ultra setups</li>
+                    <li>FPS Optimization & Debloating</li>
+                    <li>Sourcing from Casablanca/Derb Ghallef</li>
+                    <li><b>N-monti lik PC nadi b me7san prix.</b></li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🤖 AI Deployment</h3>
+                <ul>
+                    <li>Local LLM Setup (Llama 3, Mistral)</li>
+                    <li>Stable Diffusion (AI Image Gen)</li>
+                    <li>GPU Compute Optimization</li>
+                    <li><b>T3lem tkhdem b AI f l-machine dyalk.</b></li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🛠️ Concierge Sourcing</h3>
+                <ul>
+                    <li>Finding rare parts in Morocco</li>
+                    <li>Import assistance & Compatibility checks</li>
+                    <li>Custom cooling & Cable management</li>
+                    <li><b>N-jeb lik l-pice li malqitich f blasa khora.</b></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <section id="faq" class="faq reveal">
+        <div class="faq-container">
+            <div class="section-title" style="text-align: left;">
+                <p>Support</p>
+                <h2>Common Questions</h2>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What is the benefit of "Sourcing"?</h4>
+                <p>Instead of buying a pre-built PC with cheap parts, I find the absolute best motherboard, RAM, and PSU for your money. <b>N-jeb lik me7san matiriel b budget dyalk.</b></p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide a warranty?</h4>
+                <p>Every individual part has its original manufacturer warranty. I provide a 1-year assembly warranty. <b>Dima l-garantie dyal l-pice hiya l-lowla.</b></p>
+            </div>
+            <div class="faq-item">
+                <h4>I have an old PC, can you upgrade it?</h4>
+                <p>Yes. I specialize in RAM and GPU upgrades for older systems like the HP Pro 3600. <b>N-bqiy lik l-PC l-9dim y-welli t-tayer.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta reveal">
+        <h2>Ready to build the future?</h2>
+        <p style="color: #64748b; margin-bottom: 40px;">Send me your budget and I'll send you a custom spec list within 24 hours.</p>
+        <a href="https://wa.me/212600000000" class="btn-wa">WHATSAPP CONSULTATION</a>
+    </section>
+
+    <footer>AMINETECH STUDIO • CASABLANCA • 2026</footer>
+
+    <script>
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
